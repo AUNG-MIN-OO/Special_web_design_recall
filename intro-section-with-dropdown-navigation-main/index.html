@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="bg-primary">
-    <nav class="navbar navbar-expand-lg bg-primary">
+    <nav class="navbar navbar-expand-lg bg-primary position-fixed w-100">
         <div class="container">
             <a class="navbar-brand py-0 mt-1" href="#">
                 <img src="intro-section-with-dropdown-navigation-main/images/logo.svg" alt="">
@@ -56,33 +56,39 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="row justify-content-center align-items-end">
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-lg-6 col-xl-5 d-lg-none d-block">
+                <img src="intro-section-with-dropdown-navigation-main/images/image-hero-mobile.png" alt="" class="w-100">
+            </div>
             <div class="col-lg-6 col-xl-5">
-                <h1 class="display-1 text-dark fw-bold lh-1 mt-0">Make <br> remote work</h1>
-                <p class="my-5">Get your team in sync, no matter your location. Streamline processes,
-                    create team rituals, and watch productivity soar.</p>
-                <a href="#" class="btn btn-dark py-lg-2 py-xl-3 px-lg-3 px-lg-4 mb-5">Learn more</a>
-                <div class="row justify-content-between align-items-center mt-5">
-                    <div class="col">
-                        <img src="intro-section-with-dropdown-navigation-main/images/client-databiz.svg" alt="" height="25">
-                    </div>
-                    <div class="col ps-5">
-                        <img src="intro-section-with-dropdown-navigation-main/images/client-audiophile.svg" alt="" height="25">
-                    </div>
-                    <div class="col">
-                        <img src="intro-section-with-dropdown-navigation-main/images/client-meet.svg" alt="" height="25">
-                    </div>
-                    <div class="col">
-                        <img src="intro-section-with-dropdown-navigation-main/images/client-maker.svg" alt="" height="25">
+                <div class="text-lg-start text-center">
+                    <h1 class="display-1 text-dark fw-bold lh-1 mt-0">Make <br> remote work</h1>
+                    <p class="my-5">Get your team in sync, no matter your location. Streamline processes,
+                        create team rituals, and watch productivity soar.</p>
+                    <a href="#" class="btn btn-dark py-lg-2 py-xl-3 px-lg-3 px-lg-4 mb-5">Learn more</a>
+                    <div class="row justify-content-between align-items-center mt-5">
+                        <div class="col">
+                            <img src="intro-section-with-dropdown-navigation-main/images/client-databiz.svg" alt="" height="25">
+                        </div>
+                        <div class="col ps-5">
+                            <img src="intro-section-with-dropdown-navigation-main/images/client-audiophile.svg" alt="" height="25">
+                        </div>
+                        <div class="col">
+                            <img src="intro-section-with-dropdown-navigation-main/images/client-meet.svg" alt="" height="25">
+                        </div>
+                        <div class="col">
+                            <img src="intro-section-with-dropdown-navigation-main/images/client-maker.svg" alt="" height="25">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-1"></div>
-            <div class="col-lg-6 col-xl-5">
+            <div class="col-lg-6 col-xl-5 d-lg-block d-none">
                 <img src="intro-section-with-dropdown-navigation-main/images/image-hero-desktop.png" alt="" class="w-100" height="700">
             </div>
         </div>
     </div>
 </body>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>
