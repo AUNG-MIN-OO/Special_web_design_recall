@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center my-3">Invoice Maker</h3>
+            </div>
+            <form id="inputForm">
+                <div class="row border p-3 rounded-3">
+                    <div class="col">
+                        <label for="items" class="form-label">Select Item</label>
+                        <select name="items" id="items" class="form-select rounded-3" required>
+                            <option value="" selected>Select Item</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="quantity" class="form-label">Select Item</label>
+                        <input type="number" class="form-control rounded-3 text-end" name="quantity" id="quantity" required>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary btn-sm h-100 w-100 rounded-3 text-center" id="addBtn">
+                            <span class="ms-2"><i class="bi-plus-circle" style="font-size: 2rem;"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-bordered table-dark table-hover mt-5 table-striped">
+                <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td class="text-center fw-bold" colspan="3">Total Cost</td>
+                    <td class="text-end fw-bold" id="totalCostHtml">0</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
