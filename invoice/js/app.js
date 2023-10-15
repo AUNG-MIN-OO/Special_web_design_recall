@@ -12,6 +12,18 @@ function createNewOption(text, value){
     return new Option(text,value);
 }
 
+function totalCostCal(){
+    let costs = document.querySelectorAll(".cost");
+    totalCostHtml.innerText = [...costs].reduce((pv,cv) => pv + Number(cv.innerText), 0) + "¥";
+}
+
+function del(event){
+    if (confirm("Are you sure to delete?")){
+        event.target.parentElement.parentElement.parentElement.remove();
+        totalCostCal();
+    }
+}
+
 // process
 
 products.forEach(function (product){
@@ -27,6 +39,11 @@ inputForm.addEventListener("submit",function (e){
     let newTr = document.createElement("tr");
     let cost = selectedProduct.price * quantity.value;
     newTr.innerHTML = `
+                    <td class="text-center">    
+                        <button class="btn btn-danger text-white btn-sm" id="delBtn" onclick="del(event)">
+                            <i class="bi-trash"></i>
+                        </button>
+                    </td>
                     <td>${selectedProduct.name}</td>
                     <td class="text-end">${selectedProduct.price} ¥</td>
                     <td class="text-end">${quantity.value}</td>
@@ -35,6 +52,5 @@ inputForm.addEventListener("submit",function (e){
     tableBody.append(newTr);
     inputForm.reset();
 
-    let costs = document.querySelectorAll(".cost");
-    totalCostHtml.innerText = [...costs].reduce((pv,cv) => pv + Number(cv.innerText), 0) + "¥";
+    totalCostCal();
 })
