@@ -1,24 +1,72 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.scss'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import Typed from 'typed.js';
 
-setupCounter(document.querySelector('#counter'))
+import ScrollReveal from "scrollreveal";
+
+import "waypoints/lib/noframework.waypoints.min.js";
+
+const typed = new Typed('#auto-typing', {
+    strings: ['Food ....', 'Drinks ....'],
+    typeSpeed: 50,
+    backSpeed: 100,
+    loop : true,
+});
+
+let headerAnimation = {
+                                delay: 375,
+                                duration: 500,
+                                reset: true,
+                                interval: 500,
+                            };
+
+ScrollReveal().reveal('.header-animation', headerAnimation);
+
+let aboutImageAnimation = {
+    delay: 375,
+    distance: '50px',
+    origin: 'left',
+    duration: 500,
+    reset: true,
+    interval: 500,
+};
+
+ScrollReveal().reveal('.about-image-animation', aboutImageAnimation);
+
+let aboutTextAnimation = {
+    delay: 375,
+    distance: '50px',
+    origin: 'right',
+    duration: 500,
+    reset: true,
+    interval: 500,
+};
+
+ScrollReveal().reveal('.about-text-animation', aboutTextAnimation);
+
+// waypoint js
+
+let homeWayPoint = new Waypoint({
+    element: document.getElementById('home-content'),
+    handler: function(direction) {
+        let oldNav = document.querySelector(".nav-link.active");
+        if (oldNav != null){
+            oldNav.classList.remove("active");
+        }
+        let currentNav = document.querySelector(`[href="#home"]`);
+        currentNav.classList.add("active");
+    },
+    offset: '25%'
+})
+
+let aboutWayPoint = new Waypoint({
+    element: document.getElementById('about'),
+    handler: function(direction) {
+        let oldNav = document.querySelector(".nav-link.active");
+        oldNav.classList.remove("active");
+        let currentNav = document.querySelector(`[href="#about"]`);
+        currentNav.classList.add("active");
+    },
+    offset: '25%'
+})
+
